@@ -1,8 +1,7 @@
-import React, { Component } from 'react'
-import NewsItems from './NewsItems';
-
-export class News extends Component {
-   articles = [
+{
+"status": "ok",
+"totalResults": 10,
+"articles": [
 {
 "source": {
 "id": "techcrunch",
@@ -134,35 +133,4 @@ export class News extends Component {
 "content": "Close to a decade ago, brothers Aviv and Matteo Shapira co-founded Replay, a company that created a video format for 360-degree replays — the sorts of replays that have become part and parcel of majo… [+5398 chars]"
 }
 ]
-  constructor(){
-    super();
-    console.log("This is a constructor.")
-    this.state = {
-      articles: this.articles,
-      loading: false
-    }
-  }
-  render() {
-    return (
-      <div className='container my-3'>
-        <h2>NewsMonkey - Top Headlines</h2>
-        <div className='row'>
-            {this.state.articles.map((element) => (
-            <div className='col-md-4' key={element.url}>
-            <NewsItems
-            title={element.title.slice(0,45)}
-            description={element.description.slice(0,88)}
-            imageUrl={element.urlToImage}
-            newsUrl={element.url} // Replace with actual URL if needed
-            />
-  </div>
-))}
-
-          
-        </div>
-      </div>
-    )
-  }
 }
-
-export default News;
